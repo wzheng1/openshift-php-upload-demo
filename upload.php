@@ -2,13 +2,12 @@
 
 // Doesn't do any sort of checking on the file validity just yet.
 $upload_dir = "uploaded/";
-$filename		= $upload_dir . basename($_FILES["fto"]["name"]);
+$filename = $upload_dir . basename($_FILES["fto"]["name"]);
 $uploadValid = 1;
 
 if ($_FILES["fto"]["size"] > 204800000) {
 	echo "Your file is too large. Please upload a file that is smaller than 20MB.";
 	$uploadValid = 0;
-
 }
 
 if ($uploadValid == 0){
@@ -20,7 +19,4 @@ if ($uploadValid == 0){
 		echo "An unknown error has occurred. Please try again.";
 	}
 }
-
-
-
 ?>
