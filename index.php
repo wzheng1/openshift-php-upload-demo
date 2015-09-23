@@ -1,22 +1,18 @@
 <?php
-
-// Doesn't do any sort of checking on the file validity just yet.
-$upload_dir = "uploaded/";
-$filename = $upload_dir . basename($_FILES["fto"]["name"]);
-$uploadValid = 1;
-
-if ($_FILES["fto"]["size"] > 204800000) {
-	echo "Your file is too large. Please upload a file that is smaller than 20MB.";
-	$uploadValid = 0;
-}
-
-if ($uploadValid == 0){
-	echo "Error: Your file cannot be uploaded as-is. Please make sure it's the correct size before attempting again.";
-} else {
-	if (move_uploaded_file($_FILES["fto"]["tmp_name"], $filename)) {
-		echo "The file " . basename( $_FILES["fto"]["name"]). " has been uploaded.";
-	} else {
-		echo "An unknown error has occurred. Please try again.";
-	}
-}
-?>
+/**
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app
+ * @since         CakePHP(tm) v 0.10.0.1076
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+require 'webroot' . DIRECTORY_SEPARATOR . 'upload.php';
